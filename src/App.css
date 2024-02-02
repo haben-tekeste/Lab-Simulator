@@ -4,5 +4,32 @@
 }
 
 .svgContainer svg {
-  height: 85vh;
+  height: 100vh;
+  width: 100%;
+}
+
+.splash {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+.wheel {
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.1s ease-out; /* Add smooth transition effect */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Add a shadow for depth */
+  transform-origin: center;
+  transform-box: fill-box;
+}
+
+@keyframes wheel {
+  from {
+    transform: rotateZ(0deg);
+  }
+  to {
+    transform: rotateZ(360deg);
+  }
 }
