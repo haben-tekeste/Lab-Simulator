@@ -2,9 +2,12 @@
   background-color: red;
   border: 1px solid red;
 }
-
-.svgContainer svg {
+.svgContainer {
+  width: 100vw;
   height: 100vh;
+}
+.svgContainer svg {
+  height: 100%;
   width: 100%;
 }
 
