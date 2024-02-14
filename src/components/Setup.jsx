@@ -16,9 +16,7 @@ export default function Setup() {
   const [co2Flowmeter, setCo2Flowmeter] = useState(0);
 
   const calculateFinalC02Rate = () => {
-    setFinalCO2Rate(
-      co2Flowmeter - waterFlowmeter - airFlowmeter * 0.727272727272
-    );
+    setFinalCO2Rate((co2Flowmeter * waterFlowmeter + airFlowmeter) / 10.9);
   };
 
   const handleMouseDown = (event, index) => {
