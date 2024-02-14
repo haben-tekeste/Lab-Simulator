@@ -10,6 +10,16 @@ export default function Setup() {
   const [isDragging, setIsDragging] = useState([false, false, false]);
   const [startAngle, setStartAngle] = useState([0, 0, 0]);
   const [currentRotation, setCurrentRotation] = useState([0, 0, 0]);
+  const [finalCO2Rate, setFinalCO2Rate] = useState(0);
+  const [waterFlowmeter, setWaterFlowmeter] = useState("");
+  const [airFlowmeter, setAirFlowmeter] = useState(0);
+  const [co2Flowmeter, setCo2Flowmeter] = useState(0);
+
+  const calculateFinalC02Rate = () => {
+    setFinalCO2Rate(
+      co2Flowmeter - waterFlowmeter - airFlowmeter * 0.727272727272
+    );
+  };
 
   const handleMouseDown = (event, index) => {
     setIsDragging((prev) => {
@@ -52,6 +62,7 @@ export default function Setup() {
       );
       setAirFlowmeter(mapToRange(Math.abs(currentRotation[1]), 0, 180, 0, 12));
       setCo2Flowmeter(mapToRange(Math.abs(currentRotation[2]), 0, 180, 0, 11));
+      calculateFinalC02Rate();
 
       setStartAngle((prev) => {
         const updatedStartAngles = [...prev];
@@ -80,10 +91,6 @@ export default function Setup() {
 
     return Math.atan2(deltaY, deltaX) * (180 / Math.PI);
   };
-  const [waterFlowmeter, setWaterFlowmeter] = useState("");
-  const [airFlowmeter, setAirFlowmeter] = useState(0);
-  const [co2Flowmeter, setCo2Flowmeter] = useState(0);
-  const [co2FinalRate, setCo2FinalRate] = useState(0);
 
   const handleButtonClick = () => {
     setStart((val) => !val);
@@ -325,6 +332,29 @@ export default function Setup() {
               height="39"
               fill="#FEFEFE"
             />
+            <foreignObject x="1761" y="371" width="97" height="39">
+              <div
+                xmlns="http://www.w3.org/1999/xhtml"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <input
+                  type="text"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    boxSizing: "border-box",
+                    border: "none",
+                    outline: "none",
+                    padding: "5px",
+                    fontSize: "1rem",
+                    textAlign: "center",
+                    caretColor: "transparent",
+                  }}
+                  value={finalCO2Rate}
+                  readOnly
+                />
+              </div>
+            </foreignObject>
           </g>
           <path
             id="Vector 4"
@@ -441,6 +471,30 @@ export default function Setup() {
               height="63"
               fill="#FFFEFE"
             />
+            <foreignObject x="1531" y="931" width="118" height="56">
+              <div
+                xmlns="http://www.w3.org/1999/xhtml"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <input
+                  type="text"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    boxSizing: "border-box",
+                    border: "none",
+                    outline: "none",
+                    padding: "5px",
+                    fontSize: "1rem",
+                    textAlign: "center",
+                    caretColor: "transparent",
+                  }}
+                  value="25 C"
+                  defaultValue="25 C"
+                  readOnly
+                />
+              </div>
+            </foreignObject>
             <rect
               id="Rectangle 14"
               x="1531"
@@ -449,6 +503,30 @@ export default function Setup() {
               height="63"
               fill="#FFFEFE"
             />
+            <foreignObject x="1531" y="1064" width="118" height="56">
+              <div
+                xmlns="http://www.w3.org/1999/xhtml"
+                style={{ height: "100%", width: "100%" }}
+              >
+                <input
+                  type="text"
+                  style={{
+                    width: "100%",
+                    height: "100%",
+                    boxSizing: "border-box",
+                    border: "none",
+                    outline: "none",
+                    padding: "5px",
+                    fontSize: "1rem",
+                    textAlign: "center",
+                    caretColor: "transparent",
+                  }}
+                  value="19 %"
+                  defaultValue="19 %"
+                  readOnly
+                />
+              </div>
+            </foreignObject>
           </g>
           <path
             id="Water Tank"
