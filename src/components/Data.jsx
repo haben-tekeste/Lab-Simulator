@@ -1,8 +1,10 @@
-import React from "react";
+import Popup from "reactjs-popup";
+import "reactjs-popup/dist/index.css";
 
 function Data() {
   return (
-    <div>
+    <Popup trigger={<button className="btn btn-primary"> Data</button>}
+    modal>
       <ul>
         <li>
           <strong>Packing: </strong> 10mm Raschig glass rings
@@ -14,7 +16,7 @@ function Data() {
           <strong>Packing Height:</strong> 0.54 m
         </li>
       </ul>
-    </div>
+    </Popup>
   );
 }
 
