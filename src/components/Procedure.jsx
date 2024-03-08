@@ -1,15 +1,6 @@
-import Popup from "reactjs-popup";
-import "reactjs-popup/dist/index.css";
-
 function Procedure() {
   return (
-    <Popup
-      position="bottom center"
-      trigger={<button className="btn btn-primary"> Procedure</button>}
-      contentStyle={{
-        width: "20%",
-      }}
-    >
+    <div className="procedure">
       <ol>
         <li>
           To initiate the gas absorption simulator, kindly activate it by
@@ -37,23 +28,8 @@ function Procedure() {
             </li>
           </ul>
         </li>
-        <li>
-          Monitor the fluid dynamics and observe alterations in the final CO
-          <sub>2</sub>, rate as you adjust these values.
-        </li>
-        <li>
-          Record your data by clicking "--" tab to get a table with your
-          readings, please take note of them!
-        </li>
       </ol>
-      <br />
-      <p>
-        <i>Note: </i>
-        The simulator reflects the behaviour of the actual column in the lab,
-        mathematical calculations were done based on actual experimental data,
-        for any suggestions please email nour.addam@aurak.ac.ae.
-      </p>
-    </Popup>
+    </div>
   );
 }
 

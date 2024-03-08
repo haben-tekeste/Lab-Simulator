@@ -8,13 +8,14 @@ import "./App.css";
 function App() {
   return (
     <div>
-      {
-        <div style={{ display: "flex", gap: "1rem" }}>
-          <Data />
-          <Procedure />
-        </div>
-      }
-      <Setup />
+      <div style={{ display: "flex", gap: "1rem" }}>
+        <Data />
+      </div>
+      <br />
+      <div style={{ display: "flex" }}>
+        <Procedure />
+        <Setup />
+      </div>
     </div>
   );
 }

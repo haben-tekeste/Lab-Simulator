@@ -5,6 +5,12 @@
 .svgContainer {
   width: 100vw;
   height: 90vh;
+  /* border: 1px solid red; */
+  width: 80%;
+}
+.procedure {
+  /* border: 1px solid green; */
+  width: 20%;
 }
 .svgContainer svg {
   height: 100%;
@@ -20,18 +26,19 @@
 }
 .btn {
   appearance: none;
-    -webkit-appearance: none;
+  -webkit-appearance: none;
   font-family: sans-serif;
   cursor: pointer;
   padding: 12px;
   min-width: 100px;
   border: 0px;
-    -webkit-transition: background-color 100ms linear;
-    -ms-transition: background-color 100ms linear;
-     transition: background-color 100ms linear;
+  -webkit-transition: background-color 100ms linear;
+  -ms-transition: background-color 100ms linear;
+  transition: background-color 100ms linear;
 }
 
-.btn:focus, .btn.focus {
+.btn:focus,
+.btn.focus {
   outline: 0;
 }
 
