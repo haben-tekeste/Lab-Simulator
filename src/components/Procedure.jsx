@@ -4,8 +4,11 @@ import "reactjs-popup/dist/index.css";
 function Procedure() {
   return (
     <Popup
+      position="bottom center"
       trigger={<button className="btn btn-primary"> Procedure</button>}
-      modal
+      contentStyle={{
+        width: "20%",
+      }}
     >
       <ol>
         <li>

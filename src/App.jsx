@@ -10,8 +10,8 @@ function App() {
     <div>
       {
         <div style={{ display: "flex", gap: "1rem" }}>
-          <Procedure />
           <Data />
+          <Procedure />
         </div>
       }
       <Setup />
