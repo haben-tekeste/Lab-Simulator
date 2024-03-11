@@ -6,7 +6,7 @@ import { postquiz } from "../data/quiz";
 export default function PostQuiz() {
   return (
     <Popup
-      trigger={<button className="btn btn-secondary"> Post Quiz</button>}
+      trigger={<button className="btn btn-primary"> Post Quiz</button>}
       modal
     >
       <Quiz quiz={postquiz} />

@@ -4,7 +4,7 @@ import "reactjs-popup/dist/index.css";
 function Result() {
   return (
     <Popup
-      trigger={<button className="btn btn-secondary"> Results</button>}
+      trigger={<button className="btn btn-primary"> Results</button>}
       modal
     >
       <ul>

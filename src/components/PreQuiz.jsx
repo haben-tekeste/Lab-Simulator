@@ -6,7 +6,7 @@ import Quiz from "./Quiz";
 export default function PreQuiz() {
   return (
     <Popup
-      trigger={<button className="btn btn-secondary"> Pre Quiz</button>}
+      trigger={<button className="btn btn-primary"> Pre Quiz</button>}
       modal
     >
       <Quiz quiz={prequiz} />
