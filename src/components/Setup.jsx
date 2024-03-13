@@ -1,19 +1,26 @@
+/* eslint-disable react/no-unknown-property */
+/* eslint-disable react/prop-types */
 import { useState } from "react";
 import gas from "../assets/gas.gif";
 import water from "../assets/water.gif";
 import splashGif from "../assets/splash.gif";
 
-export default function Setup() {
+export default function Setup({
+  finalCO2Rate,
+  setFinalCO2Rate,
+  waterFlowmeter,
+  setWaterFlowmeter,
+  airFlowmeter,
+  setAirFlowmeter,
+  co2Flowmeter,
+  setCo2Flowmeter,
+}) {
   const [start, setStart] = useState(false);
   const [splash, setSplash] = useState(false);
 
   const [isDragging, setIsDragging] = useState([false, false, false]);
   const [startAngle, setStartAngle] = useState([0, 0, 0]);
   const [currentRotation, setCurrentRotation] = useState([0, 0, 0]);
-  const [finalCO2Rate, setFinalCO2Rate] = useState(0);
-  const [waterFlowmeter, setWaterFlowmeter] = useState(0);
-  const [airFlowmeter, setAirFlowmeter] = useState(0);
-  const [co2Flowmeter, setCo2Flowmeter] = useState(0);
 
   const calculateFinalC02Rate = () => {
     setFinalCO2Rate((co2Flowmeter * waterFlowmeter + airFlowmeter) / 10.9);
