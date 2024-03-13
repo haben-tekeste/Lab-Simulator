@@ -18,13 +18,13 @@ function App() {
     if (!finalCO2Rate) alert("Please do the calculation first");
     const jsonData = [
       {
-        "waterFlowmeter": waterFlowmeter,
-        "airFlowmeter": airFlowmeter,
-        "co2Flowmeter": co2Flowmeter,
-        "waterTemperature": 80,
-        "co2Temperature": 25,
-        "co2Concentration": "19%",
-        "finalCO2Rate": finalCO2Rate,
+        waterFlowmeter: waterFlowmeter,
+        airFlowmeter: airFlowmeter,
+        co2Flowmeter: co2Flowmeter,
+        waterTemperature: 80,
+        co2Temperature: 25,
+        co2Concentration: 19,
+        finalCO2Rate: finalCO2Rate,
       },
     ];
     exportToExcel(jsonData, "results");

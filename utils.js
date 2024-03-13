@@ -8,24 +8,24 @@ export const exportToExcel = async (excelData, fileName) => {
   const sheet = workbook.addWorksheet("My Sheet");
 
   sheet.columns = [
-    { header: "Water Flowmeter", key: "waterFlowmeter", width: 32 },
+    { header: "Water Flowmeter (L/min)", key: "waterFlowmeter", width: 32 },
     {
-      header: "Air FlowMeter",
+      header: "Air FlowMeter (L/min)",
       key: "airFlowmeter",
       width: 20,
     },
     {
-      header: "CO2 Flowmeter",
+      header: "CO2 Flowmeter (L/min)",
       key: "co2Flowmeter",
       width: 20,
     },
     {
-      header: "Water Temperature",
+      header: "Water Temperature (°C)",
       key: "waterTemperature",
       width: 15,
     },
     {
-      header: "CO2 Temperature",
+      header: "CO2 Temperature (°C)",
       key: "co2Temperature",
       width: 10,
     },
@@ -35,19 +35,12 @@ export const exportToExcel = async (excelData, fileName) => {
       width: 30,
     },
     {
-      header: "Final CO2 Rate",
+      header: "CO2 Removal Rate (%)",
       key: "finalCO2Rate",
       width: 30,
     },
   ];
 
-  //   waterFlowmeter
-  // airFlowmeter
-  // co2Flowmeter
-  // waterTemperature
-  // co2Temperature
-  // co2Concentration
-  // finalCO2Rate
   excelData.map((item) => {
     sheet.addRow({
       waterFlowmeter: item.waterFlowmeter,
@@ -61,16 +54,16 @@ export const exportToExcel = async (excelData, fileName) => {
   });
 
   workbook.xlsx.writeBuffer().then(function (data) {
-        const blob = new Blob([data], {
-          type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
-        });
-        const url = window.URL.createObjectURL(blob);
-        const anchor = document.createElement("a");
-        anchor.href = url;
-        anchor.download = "download.xlsx";
-        anchor.click();
-        window.URL.revokeObjectURL(url);
-      });
+    const blob = new Blob([data], {
+      type: "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    });
+    const url = window.URL.createObjectURL(blob);
+    const anchor = document.createElement("a");
+    anchor.href = url;
+    anchor.download = "download.xlsx";
+    anchor.click();
+    window.URL.revokeObjectURL(url);
+  });
 
   //   const worksheet = XLSX.utils.json_to_sheet(excelData);
   //   const workbook = XLSX.utils.book_new();
