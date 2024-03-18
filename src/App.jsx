@@ -8,6 +8,7 @@ import PostQuiz from "./components/PostQuiz";
 import "./App.css";
 import { exportToExcel } from "../utils";
 import { useState } from "react";
+import logo from "./assets/auklogo.jpeg";
 
 function App() {
   const [finalCO2Rate, setFinalCO2Rate] = useState(0);
@@ -30,7 +31,7 @@ function App() {
     exportToExcel(jsonData, "results");
   };
   return (
-    <div>
+    <div style={{ height: "100vh" }}>
       <div
         style={{
           display: "flex",
@@ -47,7 +48,7 @@ function App() {
           <PostQuiz />
         </div>
       </div>
-      <br />
+
       <div style={{ display: "flex" }}>
         <Procedure />
         <Setup
@@ -61,6 +62,9 @@ function App() {
           setCo2Flowmeter={setCo2Flowmeter}
         />
       </div>
+      <a href="https://aurak.ac.ae/undergraduate-degrees/engineering/bachelor-of-science-in-chemical-engineering" rel="noreferrer" target="_blank">
+        <img src={logo} width={50} height={50} alt="" />
+      </a>
     </div>
   );
 }

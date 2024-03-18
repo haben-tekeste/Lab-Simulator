@@ -4,13 +4,14 @@
 }
 .svgContainer {
   width: 100vw;
-  height: 90vh;
+  height: 85vh;
   /* border: 1px solid red; */
   width: 80%;
 }
 .procedure {
   /* border: 1px solid green; */
   width: 20%;
+  font-size: 1.3rem;
 }
 .svgContainer svg {
   height: 100%;
